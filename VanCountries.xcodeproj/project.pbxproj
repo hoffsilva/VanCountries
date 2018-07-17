@@ -14,6 +14,10 @@
 		0B15E1FF20FD613900E5F110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B15E1FE20FD613900E5F110 /* Assets.xcassets */; };
 		0B15E20220FD613900E5F110 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B15E20020FD613900E5F110 /* LaunchScreen.storyboard */; };
 		0B15E20D20FD613900E5F110 /* VanCountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E20C20FD613900E5F110 /* VanCountriesTests.swift */; };
+		0B15E21920FD62F600E5F110 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E21820FD62F600E5F110 /* FileManager.swift */; };
+		0B15E21C20FD635200E5F110 /* EnvironmentURLS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B15E21B20FD635200E5F110 /* EnvironmentURLS.plist */; };
+		0B15E21E20FD640600E5F110 /* RequestURLS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B15E21D20FD640600E5F110 /* RequestURLS.plist */; };
+		0B15E22120FD656700E5F110 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22020FD656700E5F110 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		0B15E20820FD613900E5F110 /* VanCountriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VanCountriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B15E20C20FD613900E5F110 /* VanCountriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VanCountriesTests.swift; sourceTree = "<group>"; };
 		0B15E20E20FD613900E5F110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B15E21820FD62F600E5F110 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		0B15E21B20FD635200E5F110 /* EnvironmentURLS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EnvironmentURLS.plist; sourceTree = "<group>"; };
+		0B15E21D20FD640600E5F110 /* RequestURLS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RequestURLS.plist; sourceTree = "<group>"; };
+		0B15E22020FD656700E5F110 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,9 @@
 		0B15E1F320FD613800E5F110 /* VanCountries */ = {
 			isa = PBXGroup;
 			children = (
+				0B15E21F20FD64F600E5F110 /* CoreData */,
+				0B15E21A20FD633E00E5F110 /* Config */,
+				0B15E21720FD62E400E5F110 /* Utils */,
 				0B15E1F420FD613800E5F110 /* AppDelegate.swift */,
 				0B15E1F620FD613800E5F110 /* ViewController.swift */,
 				0B15E1F820FD613800E5F110 /* Main.storyboard */,
@@ -97,6 +108,31 @@
 				0B15E20E20FD613900E5F110 /* Info.plist */,
 			);
 			path = VanCountriesTests;
+			sourceTree = "<group>";
+		};
+		0B15E21720FD62E400E5F110 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0B15E21820FD62F600E5F110 /* FileManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0B15E21A20FD633E00E5F110 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				0B15E21B20FD635200E5F110 /* EnvironmentURLS.plist */,
+				0B15E21D20FD640600E5F110 /* RequestURLS.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		0B15E21F20FD64F600E5F110 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0B15E22020FD656700E5F110 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +216,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B15E21C20FD635200E5F110 /* EnvironmentURLS.plist in Resources */,
 				0B15E20220FD613900E5F110 /* LaunchScreen.storyboard in Resources */,
+				0B15E21E20FD640600E5F110 /* RequestURLS.plist in Resources */,
 				0B15E1FF20FD613900E5F110 /* Assets.xcassets in Resources */,
 				0B15E1FA20FD613800E5F110 /* Main.storyboard in Resources */,
 			);
@@ -200,9 +238,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B15E22120FD656700E5F110 /* CoreDataStack.swift in Sources */,
 				0B15E1FD20FD613800E5F110 /* VanCountries.xcdatamodeld in Sources */,
 				0B15E1F720FD613800E5F110 /* ViewController.swift in Sources */,
 				0B15E1F520FD613800E5F110 /* AppDelegate.swift in Sources */,
+				0B15E21920FD62F600E5F110 /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				INFOPLIST_FILE = VanCountries/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +424,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				INFOPLIST_FILE = VanCountries/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
