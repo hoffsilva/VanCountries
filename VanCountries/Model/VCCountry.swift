@@ -14,6 +14,7 @@ import Foundation
 import Foundation
 
 class VCCountry: Codable {
+    
     let name: String?
     let topLevelDomain: [String]?
     let alpha2Code, alpha3Code: String?
@@ -28,11 +29,11 @@ class VCCountry: Codable {
     let gini: Double?
     let timezones, borders: [String]?
     let nativeName, numericCode: String?
-    let currencies: [Currency]?
-    let languages: [Language]?
+    let currencies: [VCCurrency]?
+    let languages: [VCLanguage]?
     let translations: Translations?
     let flag: String?
-    let regionalBlocs: [RegionalBloc]?
+    let regionalBlocs: [VCRegionalBloc]?
     let cioc: String?
     
     init(

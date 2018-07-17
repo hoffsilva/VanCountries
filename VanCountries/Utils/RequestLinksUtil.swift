@@ -15,29 +15,39 @@ private struct FileName {
 
 struct RequestLinksUtil {
     
-    static let shared = Service()
-    
-    static var allJobs: String {
-        return FileManager.load(name: FileName.environmentLink)
+    func allJobs(en: String) -> String {
+        return getHost() + getEndpoint(endpointName: en)
     }
     
-    
-    
-    
     private func getHost() -> String {
-        let file = loadFile(fileName: FileName.environmentLink)
-        if let host = file?.object(forKey: EnvironmentLinks.shared.current) as? String {
-            return host
-        }
+        return keyManagerFile(key: EnvironmentLinks.shared.current) as String
     }
     
     private func getEndpoint(endpointName: String) -> String {
-        
+        return keyManagerFile(key: endpointName )
     }
     
     
+    private func keyManagerFile(key:Any) -> String{
+        
+        if  let key = key as? EnvironmentBase{
+            let file = loadFile(fileName: FileName.environmentLink)
+            if let host = file.object(forKey: key.rawValue) as? String {
+                return host
+            }
+            
+        }
+        if  let key = key as? RequestLinks{
+            let file = loadFile(fileName: FileName.requestLink)
+            if let link = file.object(forKey: key.rawValue) as? String {
+                return link
+            }
+        }
+        return ""
+    }
+    
     private func loadFile(fileName: String) -> NSMutableDictionary {
-        return FileManager.load(name: fileName)
+        return FileManager.load(name: fileName)!
     }
     
 }
