@@ -9,35 +9,42 @@
 import Foundation
 
 private struct FileName {
-    static let requestLink = "RequestLinks"
-    static let environmentLink = "EnvironmentLinks"
+    static let requestLink = "RequestURLS"
+    static let environmentLink = "EnvironmentURLS"
 }
 
 struct RequestLinksUtil {
     
-    func allJobs(en: String) -> String {
+    func getData(en: String) -> String {
         return getHost() + getEndpoint(endpointName: en)
     }
     
     private func getHost() -> String {
-        return keyManagerFile(key: EnvironmentLinks.shared.current) as String
+        guard let file = EnvironmentLinks.shared.current else {
+            return ""
+        }
+        return keyManagerFile(key: file) as String
     }
     
     private func getEndpoint(endpointName: String) -> String {
-        return keyManagerFile(key: endpointName )
+        RequestLinks.shared.current = RequestLinksBase(rawValue: endpointName)
+        guard let file = RequestLinks.shared.current else {
+            return ""
+        }
+        return keyManagerFile(key: file) as String
     }
     
     
     private func keyManagerFile(key:Any) -> String{
         
-        if  let key = key as? EnvironmentBase{
+        if  let key = key as? EnvironmentBase {
             let file = loadFile(fileName: FileName.environmentLink)
             if let host = file.object(forKey: key.rawValue) as? String {
                 return host
             }
             
         }
-        if  let key = key as? RequestLinks{
+        if  let key = key as? RequestLinksBase {
             let file = loadFile(fileName: FileName.requestLink)
             if let link = file.object(forKey: key.rawValue) as? String {
                 return link

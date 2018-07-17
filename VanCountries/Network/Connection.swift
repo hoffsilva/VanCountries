@@ -11,6 +11,7 @@ import SystemConfiguration
 import UIKit
 
 class Connection {
+    
     static func fetchData(url: String, responseData: @escaping (Data) -> Swift.Void){
         
         if !verifyConnection() {
@@ -34,9 +35,18 @@ class Connection {
         }
         
         let dataTask = URLSession.shared.dataTask(with: URL) { (data, response, error) in
-            responseData(data!)
+            
+            if let error = error {
+                return
+            } else if let responseHTTP = response as? HTTPURLResponse, responseHTTP.statusCode == 200 {
+                if let dt = data {
+                    responseData(dt)
+                }
+            } else {
+                print("Failure")
+            }
+            
         }
-        
         dataTask.resume()
         
     }

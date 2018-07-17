@@ -1,5 +1,5 @@
 //
-//  EnvironmentLinks.swift
+//  RequestsLinks.swift
 //  VanCountries
 //
 //  Created by Hoff Henry Pereira da Silva on 17/07/2018.
@@ -9,18 +9,19 @@
 import Foundation
 
 // MARK: - Enviroment Links Singleton -
-class EnvironmentLinks {
+class RequestLinks {
     
     // MARK: - Properties -
     
-    static let shared = EnvironmentLinks()
+    static let shared = RequestLinks()
     
-    var current : EnvironmentBase?
-    
+    var current : RequestLinksBase?
     
 }
 
-// MARK: - Environment Base Enum -
-enum EnvironmentBase: String {
-    case restcountries
+// MARK: - Request Link Enum -
+enum RequestLinksBase: String {
+    
+    case getAllCountries
+    
 }

@@ -33,6 +33,12 @@
 		0B15E23F20FDA24500E5F110 /* VCCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E23E20FDA24500E5F110 /* VCCurrency.swift */; };
 		0B15E24120FDA26E00E5F110 /* VCLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E24020FDA26E00E5F110 /* VCLanguage.swift */; };
 		0B15E24320FDA28E00E5F110 /* VCRegionalBloc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E24220FDA28E00E5F110 /* VCRegionalBloc.swift */; };
+		0B8D729F20FE94DF00277A11 /* VCTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D729E20FE94DF00277A11 /* VCTranslation.swift */; };
+		0B8D72A220FE95A500277A11 /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D72A120FE95A500277A11 /* JSONNull.swift */; };
+		0B8D72A420FE95D600277A11 /* JSONCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D72A320FE95D600277A11 /* JSONCodingKey.swift */; };
+		0B8D72A620FE95FB00277A11 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D72A520FE95FB00277A11 /* JSONAny.swift */; };
+		0B8D72AA20FE96EA00277A11 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D72A920FE96EA00277A11 /* CountryViewModel.swift */; };
+		0B8D72AC20FE9C8C00277A11 /* RequestsLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D72AB20FE9C8C00277A11 /* RequestsLinks.swift */; };
 		0BB9E13520FE198E000BF7AF /* EnvironmentLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9E13420FE198E000BF7AF /* EnvironmentLinks.swift */; };
 		0BB9E13720FE1B37000BF7AF /* RequestLinksUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9E13620FE1B37000BF7AF /* RequestLinksUtil.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +84,12 @@
 		0B15E23E20FDA24500E5F110 /* VCCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCurrency.swift; sourceTree = "<group>"; };
 		0B15E24020FDA26E00E5F110 /* VCLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCLanguage.swift; sourceTree = "<group>"; };
 		0B15E24220FDA28E00E5F110 /* VCRegionalBloc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegionalBloc.swift; sourceTree = "<group>"; };
+		0B8D729E20FE94DF00277A11 /* VCTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTranslation.swift; sourceTree = "<group>"; };
+		0B8D72A120FE95A500277A11 /* JSONNull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNull.swift; sourceTree = "<group>"; };
+		0B8D72A320FE95D600277A11 /* JSONCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCodingKey.swift; sourceTree = "<group>"; };
+		0B8D72A520FE95FB00277A11 /* JSONAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
+		0B8D72A920FE96EA00277A11 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
+		0B8D72AB20FE9C8C00277A11 /* RequestsLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsLinks.swift; sourceTree = "<group>"; };
 		0BB9E13420FE198E000BF7AF /* EnvironmentLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentLinks.swift; sourceTree = "<group>"; };
 		0BB9E13620FE1B37000BF7AF /* RequestLinksUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLinksUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +133,9 @@
 		0B15E1F320FD613800E5F110 /* VanCountries */ = {
 			isa = PBXGroup;
 			children = (
+				0B8D72A820FE96CD00277A11 /* ViewModel */,
+				0B8D72A720FE96C100277A11 /* View */,
+				0B8D72A020FE958400277A11 /* ParseUtil */,
 				0B15E23920FD972200E5F110 /* Network */,
 				0B15E23620FD91EE00E5F110 /* Model */,
 				0B15E21F20FD64F600E5F110 /* CoreData */,
@@ -152,6 +167,7 @@
 				0B15E21820FD62F600E5F110 /* FileManager.swift */,
 				0BB9E13420FE198E000BF7AF /* EnvironmentLinks.swift */,
 				0BB9E13620FE1B37000BF7AF /* RequestLinksUtil.swift */,
+				0B8D72AB20FE9C8C00277A11 /* RequestsLinks.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -190,6 +206,7 @@
 				0B15E23E20FDA24500E5F110 /* VCCurrency.swift */,
 				0B15E24020FDA26E00E5F110 /* VCLanguage.swift */,
 				0B15E24220FDA28E00E5F110 /* VCRegionalBloc.swift */,
+				0B8D729E20FE94DF00277A11 /* VCTranslation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +217,31 @@
 				0B15E23A20FD97A400E5F110 /* Connection.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		0B8D72A020FE958400277A11 /* ParseUtil */ = {
+			isa = PBXGroup;
+			children = (
+				0B8D72A120FE95A500277A11 /* JSONNull.swift */,
+				0B8D72A320FE95D600277A11 /* JSONCodingKey.swift */,
+				0B8D72A520FE95FB00277A11 /* JSONAny.swift */,
+			);
+			path = ParseUtil;
+			sourceTree = "<group>";
+		};
+		0B8D72A720FE96C100277A11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B8D72A820FE96CD00277A11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0B8D72A920FE96EA00277A11 /* CountryViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,12 +362,18 @@
 				0B15E23B20FD97A400E5F110 /* Connection.swift in Sources */,
 				0BB9E13720FE1B37000BF7AF /* RequestLinksUtil.swift in Sources */,
 				0B15E1F520FD613800E5F110 /* AppDelegate.swift in Sources */,
+				0B8D72A220FE95A500277A11 /* JSONNull.swift in Sources */,
+				0B8D729F20FE94DF00277A11 /* VCTranslation.swift in Sources */,
 				0B15E23820FD922400E5F110 /* VCCountry.swift in Sources */,
 				0B15E21920FD62F600E5F110 /* FileManager.swift in Sources */,
+				0B8D72AC20FE9C8C00277A11 /* RequestsLinks.swift in Sources */,
 				0B15E23420FD906800E5F110 /* Currency+CoreDataClass.swift in Sources */,
+				0B8D72A420FE95D600277A11 /* JSONCodingKey.swift in Sources */,
+				0B8D72AA20FE96EA00277A11 /* CountryViewModel.swift in Sources */,
 				0B15E24120FDA26E00E5F110 /* VCLanguage.swift in Sources */,
 				0BB9E13520FE198E000BF7AF /* EnvironmentLinks.swift in Sources */,
 				0B15E24320FDA28E00E5F110 /* VCRegionalBloc.swift in Sources */,
+				0B8D72A620FE95FB00277A11 /* JSONAny.swift in Sources */,
 				0B15E22C20FD906800E5F110 /* Language+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

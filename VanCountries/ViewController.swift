@@ -9,9 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let countryViewModel = CountryViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        countryViewModel.loadCountries()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
