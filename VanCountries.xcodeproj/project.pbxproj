@@ -29,6 +29,7 @@
 		0B15E23420FD906800E5F110 /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22A20FD906800E5F110 /* Currency+CoreDataClass.swift */; };
 		0B15E23520FD906800E5F110 /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22B20FD906800E5F110 /* Currency+CoreDataProperties.swift */; };
 		0B15E23820FD922400E5F110 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E23720FD922400E5F110 /* Country.swift */; };
+		0B15E23B20FD97A400E5F110 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E23A20FD97A400E5F110 /* Connection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		0B15E22A20FD906800E5F110 /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0B15E22B20FD906800E5F110 /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0B15E23720FD922400E5F110 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		0B15E23A20FD97A400E5F110 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		0B15E1F320FD613800E5F110 /* VanCountries */ = {
 			isa = PBXGroup;
 			children = (
+				0B15E23920FD972200E5F110 /* Network */,
 				0B15E23620FD91EE00E5F110 /* Model */,
 				0B15E21F20FD64F600E5F110 /* CoreData */,
 				0B15E21A20FD633E00E5F110 /* Config */,
@@ -174,6 +177,14 @@
 				0B15E23720FD922400E5F110 /* Country.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0B15E23920FD972200E5F110 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0B15E23A20FD97A400E5F110 /* Connection.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				0B15E23120FD906800E5F110 /* Translations+CoreDataProperties.swift in Sources */,
 				0B15E22D20FD906800E5F110 /* Language+CoreDataProperties.swift in Sources */,
 				0B15E1F720FD613800E5F110 /* ViewController.swift in Sources */,
+				0B15E23B20FD97A400E5F110 /* Connection.swift in Sources */,
 				0B15E1F520FD613800E5F110 /* AppDelegate.swift in Sources */,
 				0B15E23820FD922400E5F110 /* Country.swift in Sources */,
 				0B15E21920FD62F600E5F110 /* FileManager.swift in Sources */,
