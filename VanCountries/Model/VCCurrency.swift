@@ -8,12 +8,15 @@
 
 import Foundation
 
-class Currency: Codable {
-    let code, name, symbol: String?
+class VCCurrency: Codable {
+    let code: String?
+    let name: String?
+    let symbol: String?
     
     init(code: String?, name: String?, symbol: String?) {
         self.code = code
         self.name = name
         self.symbol = symbol
     }
+    
 }

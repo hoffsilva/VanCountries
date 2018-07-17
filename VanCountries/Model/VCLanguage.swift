@@ -8,8 +8,11 @@
 
 import Foundation
 
-class Language: Codable {
-    let iso6391, iso6392, name, nativeName: String?
+class VCLanguage: Codable {
+    let iso6391: String?
+    let iso6392: String?
+    let name: String?
+    let nativeName: String?
     
     enum CodingKeys: String, CodingKey {
         case iso6391 = "iso639_1"

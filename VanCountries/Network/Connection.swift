@@ -37,6 +37,8 @@ class Connection {
             responseData(data!)
         }
         
+        dataTask.resume()
+        
     }
     
     static func verifyConnection() -> Bool {

@@ -13,7 +13,7 @@ import Foundation
 
 import Foundation
 
-class Country: Codable {
+class VCCountry: Codable {
     let name: String?
     let topLevelDomain: [String]?
     let alpha2Code, alpha3Code: String?
@@ -35,7 +35,32 @@ class Country: Codable {
     let regionalBlocs: [RegionalBloc]?
     let cioc: String?
     
-    init(name: String?, topLevelDomain: [String]?, alpha2Code: String?, alpha3Code: String?, callingCodes: [String]?, capital: String?, altSpellings: [String]?, region: String?, subregion: String?, population: Int?, latlng: [Int]?, demonym: String?, area: Int?, gini: Double?, timezones: [String]?, borders: [String]?, nativeName: String?, numericCode: String?, currencies: [Currency]?, languages: [Language]?, translations: Translations?, flag: String?, regionalBlocs: [RegionalBloc]?, cioc: String?) {
+    init(
+        name: String?,
+        topLevelDomain: [String]?,
+        alpha2Code: String?,
+        alpha3Code: String?,
+        callingCodes: [String]?,
+        capital: String?,
+        altSpellings: [String]?,
+        region: String?,
+        subregion: String?,
+        population: Int?,
+        latlng: [Int]?,
+        demonym: String?,
+        area: Int?,
+        gini: Double?,
+        timezones: [String]?,
+        borders: [String]?,
+        nativeName: String?,
+        numericCode: String?,
+        currencies: [VCCurrency]?,
+        languages: [VCLanguage]?,
+        translations: Translations?,
+        flag: String?,
+        regionalBlocs: [VCRegionalBloc]?,
+        cioc: String?) {
+        
         self.name = name
         self.topLevelDomain = topLevelDomain
         self.alpha2Code = alpha2Code
