@@ -35,7 +35,7 @@ extension Country {
     @NSManaged public var timezones: NSObject?
     @NSManaged public var borders: NSObject?
     @NSManaged public var nativeName: String?
-    @NSManaged public var numericCode: Int16
+    @NSManaged public var numericCode: String
     @NSManaged public var flag: String?
     @NSManaged public var regionalBlocs: NSObject?
     @NSManaged public var cioc: String?

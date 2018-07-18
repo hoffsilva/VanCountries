@@ -16,7 +16,7 @@
         <attribute name="logitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nativeName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="numericCode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="numericCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="population" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="regionalBlocs" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -61,11 +61,12 @@
         <attribute name="pt" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="relationship2" inverseEntity="Country" syncable="YES"/>
     </entity>
+    <fetchRequest name="allCountries" entity="Country"/>
     <elements>
         <element name="Country" positionX="-567" positionY="-66" width="128" height="435"/>
         <element name="Currency" positionX="-117" positionY="-81" width="128" height="105"/>
         <element name="Language" positionX="-99" positionY="36" width="128" height="120"/>
-        <element name="Translations" positionX="-108" positionY="204" width="128" height="210"/>
         <element name="RegionalBloc" positionX="-119" positionY="459" width="128" height="120"/>
+        <element name="Translations" positionX="-108" positionY="204" width="128" height="210"/>
     </elements>
 </model>

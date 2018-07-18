@@ -27,8 +27,10 @@ class VCCountry: Codable {
     let demonym: String?
     let area: Double?
     let gini: Double?
-    let timezones, borders: [String]?
-    let nativeName, numericCode: String?
+    let timezones: [String]?
+    let borders: [String]?
+    let nativeName: String?
+    let numericCode: String?
     let currencies: [VCCurrency]?
     let languages: [VCLanguage]?
     let translations: VCTranslation?
