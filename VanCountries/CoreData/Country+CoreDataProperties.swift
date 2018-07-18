@@ -37,7 +37,6 @@ extension Country {
     @NSManaged public var nativeName: String?
     @NSManaged public var numericCode: String
     @NSManaged public var flag: String?
-    @NSManaged public var regionalBlocs: NSObject?
     @NSManaged public var cioc: String?
     @NSManaged public var relationship: NSSet?
     @NSManaged public var relationship1: NSSet?
@@ -99,12 +98,6 @@ extension Country {
 
 // MARK: Generated accessors for relationship3
 extension Country {
-
-    @objc(addRelationship3Object:)
-    @NSManaged public func addToRelationship3(_ value: RegionalBloc)
-
-    @objc(removeRelationship3Object:)
-    @NSManaged public func removeFromRelationship3(_ value: RegionalBloc)
 
     @objc(addRelationship3:)
     @NSManaged public func addToRelationship3(_ values: NSSet)

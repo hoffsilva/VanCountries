@@ -19,14 +19,12 @@
         <attribute name="numericCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="population" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="regionalBlocs" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="subregion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timezones" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="topLevelDomain" optional="YES" attributeType="Transformable" syncable="YES"/>
         <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Currency" inverseName="relationship" inverseEntity="Currency" syncable="YES"/>
         <relationship name="relationship1" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Language" inverseName="relationship" inverseEntity="Language" syncable="YES"/>
         <relationship name="relationship2" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Translations" inverseName="relationship" inverseEntity="Translations" syncable="YES"/>
-        <relationship name="relationship3" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RegionalBloc" inverseName="relationship" inverseEntity="RegionalBloc" syncable="YES"/>
     </entity>
     <entity name="Currency" representedClassName="Currency" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
@@ -40,13 +38,6 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nativeName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="relationship1" inverseEntity="Country" syncable="YES"/>
-    </entity>
-    <entity name="RegionalBloc" representedClassName="RegionalBloc" syncable="YES">
-        <attribute name="acronym" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="otherAcronyms" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="otherNames" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="relationship3" inverseEntity="Country" syncable="YES"/>
     </entity>
     <entity name="Translations" representedClassName="Translations" syncable="YES">
         <attribute name="br" optional="YES" attributeType="String" syncable="YES"/>
@@ -63,10 +54,9 @@
     </entity>
     <fetchRequest name="allCountries" entity="Country"/>
     <elements>
-        <element name="Country" positionX="-567" positionY="-66" width="128" height="435"/>
+        <element name="Country" positionX="-567" positionY="-66" width="128" height="405"/>
         <element name="Currency" positionX="-117" positionY="-81" width="128" height="105"/>
         <element name="Language" positionX="-99" positionY="36" width="128" height="120"/>
-        <element name="RegionalBloc" positionX="-119" positionY="459" width="128" height="120"/>
         <element name="Translations" positionX="-108" positionY="204" width="128" height="210"/>
     </elements>
 </model>

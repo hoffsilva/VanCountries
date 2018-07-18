@@ -16,17 +16,30 @@ protocol CountriesListDelegate: class {
     func didFailLoading()
 }
 
+
 class CountryViewModel {
     
     weak var countriesListDelegate: CountriesListDelegate?
     typealias VCCountries = [VCCountry]
     let managedContext = CoreDataStack().persistentContainer.viewContext
     var arrayOfCountries = [Country]()
+    var selectedCountry =  Country()
     
+    
+    func selectCountry(indexpath: IndexPath) {
+        selectedCountry = arrayOfCountries[getIndex(indexpath: indexpath)]
+    }
+    
+    func getIndex(indexpath: IndexPath) -> Int {
+        return indexpath.row
+    }
+    
+    // MARK - API - Get countries from API
     func loadCountries() {
+      //  deleteAllCountries()
         Connection.fetchData(url: RequestLinksUtil().getData(en: "getAllCountries")) { (response) in
             do {
-               let countries = try JSONDecoder().decode(VCCountries.self, from: response)
+                let countries = try JSONDecoder().decode(VCCountries.self, from: response)
                 for ct in countries {
                     self.saveCountryOnCoreData(currentCountry: ct)
                 }
@@ -36,6 +49,8 @@ class CountryViewModel {
         }
     }
     
+    
+    // MARK - COREDATA - Get all countries
     func getAllCountries() {
         guard let model = managedContext.persistentStoreCoordinator?.managedObjectModel, let fetch = model.fetchRequestTemplate(forName: "allCountries") as? NSFetchRequest<Country> else {
             return
@@ -48,6 +63,27 @@ class CountryViewModel {
         
     }
     
+    // MARK - COREDATA - Delete all countries
+    func deleteAllCountries() {
+        var dataToDelete = [Country]()
+        guard let model = managedContext.persistentStoreCoordinator?.managedObjectModel, let fetch = model.fetchRequestTemplate(forName: "allCountries") as? NSFetchRequest<Country> else {
+            return
+        }
+        
+        do {
+            dataToDelete = try managedContext.fetch(fetch)
+            for country in dataToDelete {
+                managedContext.delete(country)
+            }
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Error when try delete all opportunities " + error.description)
+        }
+        
+        
+    }
+    
+    // MARK - COREDATA - Save countries
     func saveCountryOnCoreData(currentCountry: VCCountry) {
         let country = NSEntityDescription.insertNewObject(forEntityName: "Country", into: managedContext) as! Country
         country.name = currentCountry.name
@@ -70,7 +106,6 @@ class CountryViewModel {
         country.nativeName = currentCountry.nativeName
         country.numericCode = currentCountry.numericCode ?? ""
         country.flag = currentCountry.flag
-        country.regionalBlocs = (currentCountry.regionalBlocs! as NSObject)
         country.cioc = currentCountry.cioc
         for currency in currentCountry.currencies! {
             let crEntity = NSEntityDescription.entity(forEntityName: "Currency", in: managedContext)
@@ -93,15 +128,12 @@ class CountryViewModel {
         let translation = Translations(entity: translationEntity!, insertInto: managedContext)
         translation.br = currentCountry.translations?.br
         country.addToRelationship2(translation)
-        for regionalBloc in currentCountry.regionalBlocs! {
-            let rbEntity = NSEntityDescription.entity(forEntityName: "RegionalBloc", in: managedContext)
-            let rb = RegionalBloc(entity: rbEntity!, insertInto: managedContext)
-            rb.acronym = regionalBloc.acronym
-            rb.name = regionalBloc.name
-            rb.otherAcronyms = (regionalBloc.otherAcronyms! as NSObject)
-            rb.otherNames  = (regionalBloc.otherNames! as NSObject)
-            country.addToRelationship3(rb)
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print(error)
         }
-        CoreDataStack().saveContext()
+        getAllCountries()
     }
 }
