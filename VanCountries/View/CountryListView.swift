@@ -33,7 +33,7 @@ class CountryListView: UITableViewController {
         } else {
             countryViewModel.loadCountries()
         }
-       
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,48 +58,34 @@ class CountryListView: UITableViewController {
         return cell
     }
     
+    @available(iOS 11.0, *)
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: title,
+                                        handler: { (action, view, completionHandler) in
+                                            self.countryViewModel.arrayOfCountries.remove(at: indexPath.row)
+                                            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                                            completionHandler(true)
+        })
+        action.image = #imageLiteral(resourceName: "bomb.png")
+        action.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        let configuration = UISwipeActionsConfiguration(actions: [action])
+        return configuration
+    }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-//        let backView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: (tableView.cellForRow(at: indexPath)?.frame.height)!))
-//        backView.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-//
-//        let myImage = UIImageView(frame: backView.frame)
-//        myImage.image = #imageLiteral(resourceName: "bomb.png")
-//        myImage.contentMode = .scaleAspectFit
-//
-//        backView.addSubview(myImage)
-        
+
+
         let delete = UITableViewRowAction(style: .destructive , title: nil) { (action, indexPath) in
             self.countryViewModel.arrayOfCountries.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
         }
-        
-        //        let backView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: (tableView.cellForRow(at: indexPath)?.frame.height)!))
-        //        backView.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-        //
-        //        let myImage = UIImageView(frame: backView.frame)
-        //        myImage.image = #imageLiteral(resourceName: "bomb.png")
-        //        myImage.contentMode = .scaleAspectFit
-        //
-        //        backView.addSubview(myImage)
-        //
-        //        let imgSize: CGSize = tableView.frame.size
-        //        UIGraphicsBeginImageContextWithOptions(imgSize, false, UIScreen.main.scale)
-        //        let context = UIGraphicsGetCurrentContext()
-        //        backView.layer.render(in: context!)
-        //        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        //        UIGraphicsEndImageContext()
-        
-        
-        //        delete.backgroundColor = UIColor(patternImage: newImage)
-        
+
         delete.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
         delete.title = "💣"
-        
+
         return [delete]
     }
-
+    
 }
 
 extension CountryListView: UICollectionViewDelegate, UICollectionViewDataSource {
