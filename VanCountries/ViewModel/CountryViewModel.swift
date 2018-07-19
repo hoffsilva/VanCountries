@@ -1,3 +1,4 @@
+
 //
 //  CountryViewModel.swift
 //  VanCountries
@@ -52,7 +53,6 @@ class CountryViewModel {
     
     // MARK - API - Get countries from API
     func loadCountries() {
-        
         Connection.fetchData(url: RequestLinksUtil().getData(en: "getAllCountries")) { (response) in
             do {
                 let countries = try JSONDecoder().decode(VCCountries.self, from: response)
@@ -61,11 +61,11 @@ class CountryViewModel {
                 for ct in countries {
                     self.saveCountryOnCoreData(currentCountry: ct)
                 }
+                UserDefaults.standard.set(true, forKey: "Key")
                 self.countriesListDelegate?.didFinishLoading()
             } catch {
                 print(error)
             }
-            
         }
     }
     
@@ -82,7 +82,7 @@ class CountryViewModel {
         } catch let error as NSError {
             print("Error when try fetch all opportunities " + error.description)
         }
-        
+       countriesListDelegate?.didFinishLoading()
     }
     
     // MARK - COREDATA - Delete all countries
@@ -185,9 +185,9 @@ class CountryViewModel {
         country.addToRelationship2(translation)
         do {
             try managedContext.save()
+            arrayOfCountries.append(country)
         } catch let error as NSError {
             print(error)
         }
-        getAllCountries()
     }
 }

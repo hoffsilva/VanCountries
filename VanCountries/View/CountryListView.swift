@@ -16,18 +16,24 @@ class CountryListView: UITableViewController {
     var overlayView = UIView()
     var activityIndicator: UIActivityIndicatorView!
     let searchController = UISearchController(searchResultsController: nil)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isScrollEnabled = false
-        loadActivityIndicator()
-        addRefreshControl()
-        countryViewModel.countriesListDelegate = self
-        configureSearchBar()
         tableView.delegate = self
         tableView.dataSource = self
-        countryViewModel.loadCountries()
         
+        loadActivityIndicator()
+        countryViewModel.countriesListDelegate = self
+        configureSearchBar()
+        
+        
+        if UserDefaults.standard.bool(forKey: "Key") {
+            countryViewModel.getAllCountries()
+        } else {
+            countryViewModel.loadCountries()
+        }
+       
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,27 +61,6 @@ class CountryListView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-                let backView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: (tableView.cellForRow(at: indexPath)?.frame.height)!))
-                backView.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-        
-                let myImage = UIImageView(frame: backView.frame)
-                myImage.image = #imageLiteral(resourceName: "bomb.png")
-                myImage.contentMode = .scaleAspectFit
-        
-                backView.addSubview(myImage)
-        
-       // tableView.cellForRow(at: indexPath)?.view
-        
-      
-
-        let delete = UITableViewRowAction(style: .destructive , title: nil) { (action, indexPath) in
-            self.countryViewModel.arrayOfCountries.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
-        }
-
-
-
-
 //        let backView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: (tableView.cellForRow(at: indexPath)?.frame.height)!))
 //        backView.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
 //
@@ -84,26 +69,37 @@ class CountryListView: UITableViewController {
 //        myImage.contentMode = .scaleAspectFit
 //
 //        backView.addSubview(myImage)
-//
-//        let imgSize: CGSize = tableView.frame.size
-//        UIGraphicsBeginImageContextWithOptions(imgSize, false, UIScreen.main.scale)
-//        let context = UIGraphicsGetCurrentContext()
-//        backView.layer.render(in: context!)
-//        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-//        UIGraphicsEndImageContext()
-
         
-//        delete.backgroundColor = UIColor(patternImage: newImage)
+        let delete = UITableViewRowAction(style: .destructive , title: nil) { (action, indexPath) in
+            self.countryViewModel.arrayOfCountries.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+        }
+        
+        //        let backView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: (tableView.cellForRow(at: indexPath)?.frame.height)!))
+        //        backView.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        //
+        //        let myImage = UIImageView(frame: backView.frame)
+        //        myImage.image = #imageLiteral(resourceName: "bomb.png")
+        //        myImage.contentMode = .scaleAspectFit
+        //
+        //        backView.addSubview(myImage)
+        //
+        //        let imgSize: CGSize = tableView.frame.size
+        //        UIGraphicsBeginImageContextWithOptions(imgSize, false, UIScreen.main.scale)
+        //        let context = UIGraphicsGetCurrentContext()
+        //        backView.layer.render(in: context!)
+        //        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        //        UIGraphicsEndImageContext()
+        
+        
+        //        delete.backgroundColor = UIColor(patternImage: newImage)
         
         delete.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
         delete.title = "💣"
         
-
         return [delete]
     }
-    
-    
-    
+
 }
 
 extension CountryListView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -130,34 +126,28 @@ extension CountryListView: UICollectionViewDelegate, UICollectionViewDataSource 
             cell.labelCurrency.text = countryViewModel.getLanguage(from: indexPath.row).name ?? ""
             return cell
         }
-       
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeaderView", for: indexPath) as! SectionHeaderCollectionView
-        
         if indexPath.section == 0 {
             headerView.sectionTitle = "Currency"
         } else {
             headerView.sectionTitle = "Language"
         }
-        
         return headerView
-        
     }
-    
-    
 }
 
 extension CountryListView: CountriesListDelegate {
     func didFinishLoading() {
-        tableView.reloadData()
+        //tableView.reloadData()
         removeActivityIndicator()
-        tableView.refreshControl?.endRefreshing()
     }
     
     func didFailLoading() {
-        print("kjdajdbdjnjskdaskdksadjksdjska")
+        print("erro")
     }
     
     
@@ -204,7 +194,7 @@ extension CountryListView {
         tableView.refreshControl?.addTarget(self, action: #selector(loadCountries), for: .valueChanged)
     }
     
-    @objc func loadCountries() {
+    @IBAction func loadCountries() {
         loadActivityIndicator()
         countryViewModel.loadCountries()
     }
@@ -230,6 +220,7 @@ extension CountryListView {
     }
     
     func removeActivityIndicator() {
+        tableView.reloadData()
         tableView.isScrollEnabled = true
         UIView.animate(withDuration: 0.5, delay: 0.1,  options: .curveEaseOut, animations: {
             self.overlayView.alpha = 0
