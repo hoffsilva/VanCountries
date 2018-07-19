@@ -11,4 +11,9 @@ import UIKit
 
 class CountryListViewCell: UITableViewCell {
     
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var collectionVivewCurrencies: UICollectionView!
+    
 }
+
+

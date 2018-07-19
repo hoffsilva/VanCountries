@@ -23,8 +23,24 @@ class CountryViewModel {
     typealias VCCountries = [VCCountry]
     let managedContext = CoreDataStack().persistentContainer.viewContext
     var arrayOfCountries = [Country]()
+    
     var selectedCountry =  Country()
     
+    func getCurrenciesFrom(selectedCountry: Country) -> [Currency]  {
+        return selectedCountry.currency?.allObjects as! [Currency]
+    }
+    
+    func getLanguagesFrom(selectedCountry: Country) -> [Language] {
+        return selectedCountry.language?.allObjects as! [Language]
+    }
+    
+    func getLanguage(from index: Int) -> Language {
+        return getLanguagesFrom(selectedCountry: selectedCountry)[index]
+    }
+    
+    func getCurrency(from index: Int) -> Currency {
+        return getCurrenciesFrom(selectedCountry: selectedCountry)[index]
+    }
     
     func selectCountry(indexpath: IndexPath) {
         selectedCountry = arrayOfCountries[getIndex(indexpath: indexpath)]
@@ -36,16 +52,20 @@ class CountryViewModel {
     
     // MARK - API - Get countries from API
     func loadCountries() {
-      //  deleteAllCountries()
+        
         Connection.fetchData(url: RequestLinksUtil().getData(en: "getAllCountries")) { (response) in
             do {
                 let countries = try JSONDecoder().decode(VCCountries.self, from: response)
+                self.arrayOfCountries = []
+                self.deleteAllCountries()
                 for ct in countries {
                     self.saveCountryOnCoreData(currentCountry: ct)
                 }
+                self.countriesListDelegate?.didFinishLoading()
             } catch {
                 print(error)
-            }            
+            }
+            
         }
     }
     
@@ -56,7 +76,9 @@ class CountryViewModel {
             return
         }
         do {
+            arrayOfCountries.removeAll()
             arrayOfCountries = try managedContext.fetch(fetch)
+            print(arrayOfCountries.count)
         } catch let error as NSError {
             print("Error when try fetch all opportunities " + error.description)
         }
@@ -79,12 +101,45 @@ class CountryViewModel {
         } catch let error as NSError {
             print("Error when try delete all opportunities " + error.description)
         }
-        
+    }
+    
+    func delete(country: Country) {
+        managedContext.delete(country)
+        do {
+            try managedContext.save()
+            getAllCountries()
+            countriesListDelegate?.didFinishLoading()
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    
+    
+    func searchCountry(by name: String) {
+        guard let model = managedContext.persistentStoreCoordinator?.managedObjectModel, let fetch = model.fetchRequestTemplate(forName: "allCountries") as? NSFetchRequest<Country> else {
+            return
+        }
+        do {
+            let countries = try managedContext.fetch(fetch)
+            arrayOfCountries = []
+            for country in countries {
+                if (country.name?.contains(name))! {
+                    arrayOfCountries.append(country)
+                }
+            }
+            self.countriesListDelegate?.didFinishLoading()
+        } catch let error as NSError {
+            print("Error when try fetch all opportunities " + error.description)
+        }
         
     }
     
     // MARK - COREDATA - Save countries
     func saveCountryOnCoreData(currentCountry: VCCountry) {
+        var count = 0
+        while count < 300 {
+            count += 1
+        }
         let country = NSEntityDescription.insertNewObject(forEntityName: "Country", into: managedContext) as! Country
         country.name = currentCountry.name
         country.topLevelDomain = currentCountry.topLevelDomain! as NSObject
@@ -113,7 +168,7 @@ class CountryViewModel {
             cr.code = currency.code ?? ""
             cr.name = currency.name ?? ""
             cr.symbol = currency.symbol ?? ""
-            country.addToRelationship(cr)
+            country.addToCurrency(cr)
         }
         for language in currentCountry.languages! {
             let langEntity = NSEntityDescription.entity(forEntityName: "Language", in: managedContext)
@@ -122,13 +177,12 @@ class CountryViewModel {
             lang.iso639_2 = language.iso6392
             lang.name = language.nativeName
             lang.nativeName = language.nativeName
-            country.addToRelationship1(lang)
+            country.addToLanguage(lang)
         }
         let translationEntity = NSEntityDescription.entity(forEntityName: "Translations", in: managedContext)
         let translation = Translations(entity: translationEntity!, insertInto: managedContext)
         translation.br = currentCountry.translations?.br
         country.addToRelationship2(translation)
-        
         do {
             try managedContext.save()
         } catch let error as NSError {

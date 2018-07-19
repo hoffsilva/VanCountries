@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B15E1F520FD613800E5F110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E1F420FD613800E5F110 /* AppDelegate.swift */; };
-		0B15E1F720FD613800E5F110 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E1F620FD613800E5F110 /* ViewController.swift */; };
+		0B15E1F720FD613800E5F110 /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E1F620FD613800E5F110 /* CountryListView.swift */; };
 		0B15E1FA20FD613800E5F110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B15E1F820FD613800E5F110 /* Main.storyboard */; };
 		0B15E1FD20FD613800E5F110 /* VanCountries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E1FB20FD613800E5F110 /* VanCountries.xcdatamodeld */; };
 		0B15E1FF20FD613900E5F110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B15E1FE20FD613900E5F110 /* Assets.xcassets */; };
@@ -18,16 +18,6 @@
 		0B15E21C20FD635200E5F110 /* EnvironmentURLS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B15E21B20FD635200E5F110 /* EnvironmentURLS.plist */; };
 		0B15E21E20FD640600E5F110 /* RequestURLS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B15E21D20FD640600E5F110 /* RequestURLS.plist */; };
 		0B15E22120FD656700E5F110 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22020FD656700E5F110 /* CoreDataStack.swift */; };
-		0B15E22C20FD906800E5F110 /* Language+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22220FD906800E5F110 /* Language+CoreDataClass.swift */; };
-		0B15E22D20FD906800E5F110 /* Language+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22320FD906800E5F110 /* Language+CoreDataProperties.swift */; };
-		0B15E22E20FD906800E5F110 /* RegionalBloc+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22420FD906800E5F110 /* RegionalBloc+CoreDataClass.swift */; };
-		0B15E22F20FD906800E5F110 /* RegionalBloc+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22520FD906800E5F110 /* RegionalBloc+CoreDataProperties.swift */; };
-		0B15E23020FD906800E5F110 /* Translations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22620FD906800E5F110 /* Translations+CoreDataClass.swift */; };
-		0B15E23120FD906800E5F110 /* Translations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22720FD906800E5F110 /* Translations+CoreDataProperties.swift */; };
-		0B15E23220FD906800E5F110 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22820FD906800E5F110 /* Country+CoreDataClass.swift */; };
-		0B15E23320FD906800E5F110 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22920FD906800E5F110 /* Country+CoreDataProperties.swift */; };
-		0B15E23420FD906800E5F110 /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22A20FD906800E5F110 /* Currency+CoreDataClass.swift */; };
-		0B15E23520FD906800E5F110 /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E22B20FD906800E5F110 /* Currency+CoreDataProperties.swift */; };
 		0B15E23820FD922400E5F110 /* VCCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E23720FD922400E5F110 /* VCCountry.swift */; };
 		0B15E23B20FD97A400E5F110 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E23A20FD97A400E5F110 /* Connection.swift */; };
 		0B15E23F20FDA24500E5F110 /* VCCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15E23E20FDA24500E5F110 /* VCCurrency.swift */; };
@@ -41,6 +31,18 @@
 		0B8D72AC20FE9C8C00277A11 /* RequestsLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8D72AB20FE9C8C00277A11 /* RequestsLinks.swift */; };
 		0BB9E13520FE198E000BF7AF /* EnvironmentLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9E13420FE198E000BF7AF /* EnvironmentLinks.swift */; };
 		0BB9E13720FE1B37000BF7AF /* RequestLinksUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9E13620FE1B37000BF7AF /* RequestLinksUtil.swift */; };
+		0BCAD70320FEE70200450D0B /* CountryListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD70220FEE70200450D0B /* CountryListViewCell.swift */; };
+		0BCAD71C20FFD7F700450D0B /* Language+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD71420FFD7F700450D0B /* Language+CoreDataClass.swift */; };
+		0BCAD71D20FFD7F700450D0B /* Language+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD71520FFD7F700450D0B /* Language+CoreDataProperties.swift */; };
+		0BCAD71E20FFD7F700450D0B /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD71620FFD7F700450D0B /* Currency+CoreDataClass.swift */; };
+		0BCAD71F20FFD7F700450D0B /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD71720FFD7F700450D0B /* Currency+CoreDataProperties.swift */; };
+		0BCAD72020FFD7F700450D0B /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD71820FFD7F700450D0B /* Country+CoreDataClass.swift */; };
+		0BCAD72120FFD7F700450D0B /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD71920FFD7F700450D0B /* Country+CoreDataProperties.swift */; };
+		0BCAD72220FFD7F700450D0B /* Translations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD71A20FFD7F700450D0B /* Translations+CoreDataClass.swift */; };
+		0BCAD72320FFD7F700450D0B /* Translations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD71B20FFD7F700450D0B /* Translations+CoreDataProperties.swift */; };
+		0BCAD72720FFE48500450D0B /* CountryCurrenciesListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD72620FFE48500450D0B /* CountryCurrenciesListViewCell.swift */; };
+		0BCAD72920FFF1A200450D0B /* CountryLanguagesListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD72820FFF1A200450D0B /* CountryLanguagesListViewCell.swift */; };
+		0BCAD72B20FFFDBC00450D0B /* SectionHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD72A20FFFDBC00450D0B /* SectionHeaderCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +58,7 @@
 /* Begin PBXFileReference section */
 		0B15E1F120FD613800E5F110 /* VanCountries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VanCountries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B15E1F420FD613800E5F110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B15E1F620FD613800E5F110 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B15E1F620FD613800E5F110 /* CountryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListView.swift; sourceTree = "<group>"; };
 		0B15E1F920FD613800E5F110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B15E1FC20FD613800E5F110 /* VanCountries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VanCountries.xcdatamodel; sourceTree = "<group>"; };
 		0B15E1FE20FD613900E5F110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,16 +71,6 @@
 		0B15E21B20FD635200E5F110 /* EnvironmentURLS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EnvironmentURLS.plist; sourceTree = "<group>"; };
 		0B15E21D20FD640600E5F110 /* RequestURLS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RequestURLS.plist; sourceTree = "<group>"; };
 		0B15E22020FD656700E5F110 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		0B15E22220FD906800E5F110 /* Language+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0B15E22320FD906800E5F110 /* Language+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0B15E22420FD906800E5F110 /* RegionalBloc+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegionalBloc+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0B15E22520FD906800E5F110 /* RegionalBloc+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegionalBloc+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0B15E22620FD906800E5F110 /* Translations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Translations+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0B15E22720FD906800E5F110 /* Translations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Translations+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0B15E22820FD906800E5F110 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0B15E22920FD906800E5F110 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0B15E22A20FD906800E5F110 /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0B15E22B20FD906800E5F110 /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0B15E23720FD922400E5F110 /* VCCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCountry.swift; sourceTree = "<group>"; };
 		0B15E23A20FD97A400E5F110 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		0B15E23E20FDA24500E5F110 /* VCCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCurrency.swift; sourceTree = "<group>"; };
@@ -92,6 +84,18 @@
 		0B8D72AB20FE9C8C00277A11 /* RequestsLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsLinks.swift; sourceTree = "<group>"; };
 		0BB9E13420FE198E000BF7AF /* EnvironmentLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentLinks.swift; sourceTree = "<group>"; };
 		0BB9E13620FE1B37000BF7AF /* RequestLinksUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLinksUtil.swift; sourceTree = "<group>"; };
+		0BCAD70220FEE70200450D0B /* CountryListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewCell.swift; sourceTree = "<group>"; };
+		0BCAD71420FFD7F700450D0B /* Language+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0BCAD71520FFD7F700450D0B /* Language+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Language+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0BCAD71620FFD7F700450D0B /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0BCAD71720FFD7F700450D0B /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0BCAD71820FFD7F700450D0B /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0BCAD71920FFD7F700450D0B /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0BCAD71A20FFD7F700450D0B /* Translations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Translations+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0BCAD71B20FFD7F700450D0B /* Translations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Translations+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0BCAD72620FFE48500450D0B /* CountryCurrenciesListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrenciesListViewCell.swift; sourceTree = "<group>"; };
+		0BCAD72820FFF1A200450D0B /* CountryLanguagesListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLanguagesListViewCell.swift; sourceTree = "<group>"; };
+		0BCAD72A20FFFDBC00450D0B /* SectionHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,16 +187,14 @@
 		0B15E21F20FD64F600E5F110 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				0B15E22220FD906800E5F110 /* Language+CoreDataClass.swift */,
-				0B15E22320FD906800E5F110 /* Language+CoreDataProperties.swift */,
-				0B15E22420FD906800E5F110 /* RegionalBloc+CoreDataClass.swift */,
-				0B15E22520FD906800E5F110 /* RegionalBloc+CoreDataProperties.swift */,
-				0B15E22620FD906800E5F110 /* Translations+CoreDataClass.swift */,
-				0B15E22720FD906800E5F110 /* Translations+CoreDataProperties.swift */,
-				0B15E22820FD906800E5F110 /* Country+CoreDataClass.swift */,
-				0B15E22920FD906800E5F110 /* Country+CoreDataProperties.swift */,
-				0B15E22A20FD906800E5F110 /* Currency+CoreDataClass.swift */,
-				0B15E22B20FD906800E5F110 /* Currency+CoreDataProperties.swift */,
+				0BCAD71420FFD7F700450D0B /* Language+CoreDataClass.swift */,
+				0BCAD71520FFD7F700450D0B /* Language+CoreDataProperties.swift */,
+				0BCAD71620FFD7F700450D0B /* Currency+CoreDataClass.swift */,
+				0BCAD71720FFD7F700450D0B /* Currency+CoreDataProperties.swift */,
+				0BCAD71820FFD7F700450D0B /* Country+CoreDataClass.swift */,
+				0BCAD71920FFD7F700450D0B /* Country+CoreDataProperties.swift */,
+				0BCAD71A20FFD7F700450D0B /* Translations+CoreDataClass.swift */,
+				0BCAD71B20FFD7F700450D0B /* Translations+CoreDataProperties.swift */,
 				0B15E22020FD656700E5F110 /* CoreDataStack.swift */,
 			);
 			path = CoreData;
@@ -231,7 +233,11 @@
 		0B8D72A720FE96C100277A11 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0B15E1F620FD613800E5F110 /* ViewController.swift */,
+				0B15E1F620FD613800E5F110 /* CountryListView.swift */,
+				0BCAD70220FEE70200450D0B /* CountryListViewCell.swift */,
+				0BCAD72620FFE48500450D0B /* CountryCurrenciesListViewCell.swift */,
+				0BCAD72820FFF1A200450D0B /* CountryLanguagesListViewCell.swift */,
+				0BCAD72A20FFFDBC00450D0B /* SectionHeaderCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,33 +354,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B15E23F20FDA24500E5F110 /* VCCurrency.swift in Sources */,
-				0B15E23520FD906800E5F110 /* Currency+CoreDataProperties.swift in Sources */,
-				0B15E23020FD906800E5F110 /* Translations+CoreDataClass.swift in Sources */,
-				0B15E22E20FD906800E5F110 /* RegionalBloc+CoreDataClass.swift in Sources */,
-				0B15E23320FD906800E5F110 /* Country+CoreDataProperties.swift in Sources */,
-				0B15E23220FD906800E5F110 /* Country+CoreDataClass.swift in Sources */,
+				0BCAD70320FEE70200450D0B /* CountryListViewCell.swift in Sources */,
 				0B15E22120FD656700E5F110 /* CoreDataStack.swift in Sources */,
+				0BCAD72B20FFFDBC00450D0B /* SectionHeaderCollectionView.swift in Sources */,
+				0BCAD71C20FFD7F700450D0B /* Language+CoreDataClass.swift in Sources */,
 				0B15E1FD20FD613800E5F110 /* VanCountries.xcdatamodeld in Sources */,
-				0B15E22F20FD906800E5F110 /* RegionalBloc+CoreDataProperties.swift in Sources */,
-				0B15E23120FD906800E5F110 /* Translations+CoreDataProperties.swift in Sources */,
-				0B15E22D20FD906800E5F110 /* Language+CoreDataProperties.swift in Sources */,
-				0B15E1F720FD613800E5F110 /* ViewController.swift in Sources */,
+				0B15E1F720FD613800E5F110 /* CountryListView.swift in Sources */,
+				0BCAD72220FFD7F700450D0B /* Translations+CoreDataClass.swift in Sources */,
 				0B15E23B20FD97A400E5F110 /* Connection.swift in Sources */,
 				0BB9E13720FE1B37000BF7AF /* RequestLinksUtil.swift in Sources */,
 				0B15E1F520FD613800E5F110 /* AppDelegate.swift in Sources */,
+				0BCAD71F20FFD7F700450D0B /* Currency+CoreDataProperties.swift in Sources */,
+				0BCAD72120FFD7F700450D0B /* Country+CoreDataProperties.swift in Sources */,
+				0BCAD72920FFF1A200450D0B /* CountryLanguagesListViewCell.swift in Sources */,
+				0BCAD71D20FFD7F700450D0B /* Language+CoreDataProperties.swift in Sources */,
 				0B8D72A220FE95A500277A11 /* JSONNull.swift in Sources */,
 				0B8D729F20FE94DF00277A11 /* VCTranslation.swift in Sources */,
 				0B15E23820FD922400E5F110 /* VCCountry.swift in Sources */,
+				0BCAD72020FFD7F700450D0B /* Country+CoreDataClass.swift in Sources */,
 				0B15E21920FD62F600E5F110 /* FileManager.swift in Sources */,
 				0B8D72AC20FE9C8C00277A11 /* RequestsLinks.swift in Sources */,
-				0B15E23420FD906800E5F110 /* Currency+CoreDataClass.swift in Sources */,
 				0B8D72A420FE95D600277A11 /* JSONCodingKey.swift in Sources */,
 				0B8D72AA20FE96EA00277A11 /* CountryViewModel.swift in Sources */,
 				0B15E24120FDA26E00E5F110 /* VCLanguage.swift in Sources */,
+				0BCAD71E20FFD7F700450D0B /* Currency+CoreDataClass.swift in Sources */,
+				0BCAD72720FFE48500450D0B /* CountryCurrenciesListViewCell.swift in Sources */,
 				0BB9E13520FE198E000BF7AF /* EnvironmentLinks.swift in Sources */,
+				0BCAD72320FFD7F700450D0B /* Translations+CoreDataProperties.swift in Sources */,
 				0B15E24320FDA28E00E5F110 /* VCRegionalBloc.swift in Sources */,
 				0B8D72A620FE95FB00277A11 /* JSONAny.swift in Sources */,
-				0B15E22C20FD906800E5F110 /* Language+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
